@@ -2890,14 +2890,9 @@
       "scripts": [
         "scripts/redos73/kernel.sh",
         "scripts/redos73/floppy.sh",
-        "scripts/redos73/virtualbox.sh",
-        "scripts/redos73/parallels.sh",
-        "scripts/redos73/vmware.sh",
-        "scripts/redos73/qemu.sh",
         "scripts/redos73/vagrant.sh",
         "scripts/redos73/tuning.sh",
         "scripts/redos73/sshd.sh",
-        "scripts/redos73/updatedb.sh",
         "scripts/redos73/cleanup.sh"
       ],
       "execute_command": "{{.Vars}} /bin/bash '{{.Path}}'",
@@ -7134,12 +7129,7 @@
       "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_timeout": "3600s",
-      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
-      "guest_additions_url": "https://download.virtualbox.org/virtualbox/7.0.4/VBoxGuestAdditions_7.0.4.iso",
-      "guest_additions_sha256": "85908d49df9df685ae00806d4cf0d154791804651039a3839be8cc876fae1011",
-      "guest_additions_path": "VBoxGuestAdditions.iso",
-      "guest_additions_mode": "upload",
-      "virtualbox_version_file": "VBoxVersion.txt"
+      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now"
     },
 
     {
