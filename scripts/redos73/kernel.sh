@@ -37,3 +37,6 @@ retry() {
 if [[ `rpm -q kernel-lt | wc -l` != 1 ]]; then
   dnf --assumeyes remove $( rpm -q kernel-lt | grep -v `uname -r` )
 fi
+
+# Do not need firmwares inside Vbox
+rpm -qa | grep firmware | xargs dnf --assumeyes remove
