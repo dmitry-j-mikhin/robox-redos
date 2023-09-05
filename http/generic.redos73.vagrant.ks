@@ -26,7 +26,6 @@ cdrom
 %packages
 @core
 grub2-redos-theme
-redos-kernels-release
 sudo
 -fprintd-pam
 -intltool
