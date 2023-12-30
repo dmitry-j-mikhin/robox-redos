@@ -1,4 +1,4 @@
-# RedOS 7.3.3 image
+# RedOS 7.3.4 image
 
 Build locally: `./build-redos73.sh`  
 Result: https://app.vagrantup.com/tectep/boxes/redos73
