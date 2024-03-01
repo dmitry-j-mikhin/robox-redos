@@ -4,9 +4,9 @@
 printf "nameserver 4.2.2.1\nnameserver 4.2.2.2\nnameserver 208.67.220.220\n"> /etc/resolv.conf
 
 # Set the hostname, and then ensure it will resolve properly.
-if [[ "$PACKER_BUILD_NAME" =~ ^generic-redos73-(vmware|hyperv|libvirt|parallels|virtualbox)$ ]]; then
-  printf "redos73.localdomain\n" > /etc/hostname
-  printf "\n127.0.0.1 redos73.localdomain\n\n" >> /etc/hosts
+if [[ "$PACKER_BUILD_NAME" =~ ^generic-redos-(vmware|hyperv|libvirt|parallels|virtualbox)$ ]]; then
+  printf "redos.localdomain\n" > /etc/hostname
+  printf "\n127.0.0.1 redos.localdomain\n\n" >> /etc/hosts
 else
   printf "magma.localdomain\n" > /etc/hostname
   printf "\n127.0.0.1 magma.localdomain\n\n" >> /etc/hosts

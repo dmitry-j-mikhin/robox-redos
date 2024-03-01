@@ -2872,35 +2872,35 @@
       "type": "shell",
       "timeout": "120m",
       "scripts": [
-        "scripts/redos73/network.sh",
-        "scripts/redos73/dnf.sh",
-        "scripts/redos73/base.sh",
-        "scripts/redos73/reboot.sh"
+        "scripts/redos/network.sh",
+        "scripts/redos/dnf.sh",
+        "scripts/redos/base.sh",
+        "scripts/redos/reboot.sh"
       ],
       "execute_command": "{{.Vars}} /bin/bash '{{.Path}}'",
       "start_retry_timeout": "15m",
       "expect_disconnect": "true",
       "only": [
-        "generic-redos73-virtualbox"
+        "generic-redos-virtualbox"
       ]
     },
     {
       "type": "shell",
       "timeout": "120m",
       "scripts": [
-        "scripts/redos73/kernel.sh",
-        "scripts/redos73/floppy.sh",
-        "scripts/redos73/vagrant.sh",
-        "scripts/redos73/tuning.sh",
-        "scripts/redos73/sshd.sh",
-        "scripts/redos73/cleanup.sh"
+        "scripts/redos/kernel.sh",
+        "scripts/redos/floppy.sh",
+        "scripts/redos/vagrant.sh",
+        "scripts/redos/tuning.sh",
+        "scripts/redos/sshd.sh",
+        "scripts/redos/cleanup.sh"
       ],
       "execute_command": "{{.Vars}} /bin/bash '{{.Path}}'",
       "pause_before": "120s",
       "start_retry_timeout": "15m",
       "expect_disconnect": "true",
       "only": [
-        "generic-redos73-virtualbox"
+        "generic-redos-virtualbox"
       ]
     },
     {
@@ -7072,13 +7072,13 @@
     },
     {
       "type": "virtualbox-iso",
-      "name": "generic-redos73-virtualbox",
-      "vm_name": "generic-redos73-virtualbox",
-      "output_directory": "output/generic-redos73-virtualbox",
+      "name": "generic-redos-virtualbox",
+      "vm_name": "generic-redos-virtualbox",
+      "output_directory": "output/generic-redos-virtualbox",
       "boot_wait": "20s",
       "boot_keygroup_interval": "1s",
       "boot_command": [
-        "<tab> net.ifnames=0 inst.text inst.ks=http://192.168.1.200:{{ .HTTPPort }}/generic.redos73.vagrant.ks vga=792 rd.shell <enter><wait>"
+        "<tab> net.ifnames=0 inst.text inst.ks=http://192.168.1.200:{{ .HTTPPort }}/generic.redos.vagrant.ks vga=792 rd.shell <enter><wait>"
       ],
       "disk_size": 131072,
       "cpus": 2,
@@ -7123,8 +7123,8 @@
       "vrdp_bind_address": "127.0.0.1",
       "vrdp_port_min": 11000,
       "vrdp_port_max": 12000,
-      "iso_url": "https://files.red-soft.ru/redos/7.3/x86_64/iso/redos-MUROM-7.3.4-20231220.0-Everything-x86_64-DVD1.iso",
-      "iso_checksum": "md5:a8ca7c2c1b39f8d9ca75d2118457e5dd",
+      "iso_url": "https://files.red-soft.ru/redos/8.0/x86_64/iso/redos-8-20240218.1-Everything-x86_64-DVD1.iso",
+      "iso_checksum": "md5:49c93e5c4ec8cef4ce44386af072b1b7",
       "guest_additions_mode": "disable",
       "ssh_username": "root",
       "ssh_password": "vagrant",

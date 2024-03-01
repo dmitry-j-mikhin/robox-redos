@@ -8,19 +8,14 @@ user --name=vagrant --password=vagrant --plaintext
 
 zerombr
 clearpart --all --initlabel
-part /boot --fstype="xfs" --size=1024 --label=boot
-part pv.01 --fstype="lvmpv" --grow
-volgroup redos --pesize=4096 pv.01
-logvol swap --fstype="swap" --size=2048 --name=swap --vgname=redos
-logvol / --fstype="xfs" --percent=100 --label="root" --name=root --vgname=redos
+autopart --nohome
 
 firewall --enabled --service=ssh
-authconfig --enableshadow --passalgo=sha512
-network --device eth0 --bootproto dhcp --noipv6 --hostname=redos73.localdomain
+network --device eth0 --bootproto dhcp --noipv6 --hostname=redos.localdomain
 bootloader --timeout=1 --append="net.ifnames=0 biosdevname=0 no_timer_check vga=792 nomodeset text"
 
 # repo --name=BaseOS
-# url --url=https://files.red-soft.ru/redos/7.3/x86_64/os/
+# url --url=https://files.red-soft.ru/redos/8.0/x86_64/os/
 cdrom
 
 %packages
@@ -31,6 +26,7 @@ sudo
 -intltool
 -iwl*-firmware
 -microcode_ctl
+-xorg-x11-drv-vbox
 %end
 
 %post
