@@ -7078,7 +7078,11 @@
       "boot_wait": "20s",
       "boot_keygroup_interval": "1s",
       "boot_command": [
-        "<tab> net.ifnames=0 inst.text inst.ks=http://192.168.1.200:{{ .HTTPPort }}/generic.redos.vagrant.ks vga=792 rd.shell <enter><wait>"
+        "c<wait>",
+        "linux /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=redos-Everything-DVD-x86_64-8 ",
+        "net.ifnames=0 inst.text inst.ks=http://192.168.1.200:{{ .HTTPPort }}/generic.redos.vagrant.ks vga=792 rd.shell <enter><wait>",
+        "initrd /images/pxeboot/initrd.img<enter><wait10>",
+        "boot<enter><wait>"
       ],
       "disk_size": 131072,
       "cpus": 2,
@@ -7123,8 +7127,8 @@
       "vrdp_bind_address": "127.0.0.1",
       "vrdp_port_min": 11000,
       "vrdp_port_max": 12000,
-      "iso_url": "https://files.red-soft.ru/redos/8.0/x86_64/iso/redos-8-20240218.1-Everything-x86_64-DVD1.iso",
-      "iso_checksum": "md5:49c93e5c4ec8cef4ce44386af072b1b7",
+      "iso_url": "https://files.red-soft.ru/redos/8.0/x86_64/iso/redos-8-20241206.4-Everything-x86_64-DVD1.iso",
+      "iso_checksum": "md5:26f31cf86d31f609b4754e1d24f00043",
       "guest_additions_mode": "disable",
       "ssh_username": "root",
       "ssh_password": "vagrant",
